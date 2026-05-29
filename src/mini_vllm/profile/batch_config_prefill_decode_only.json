@@ -1,0 +1,2268 @@
+[
+  {
+    "name": "prefill_only_q512_n1",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 512
+      }
+    ]
+  },
+  {
+    "name": "prefill_only_q512_n2",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      }
+    ]
+  },
+  {
+    "name": "prefill_only_q512_n4",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      }
+    ]
+  },
+  {
+    "name": "prefill_only_q512_n8",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      }
+    ]
+  },
+  {
+    "name": "prefill_only_q512_n16",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      },
+      {
+        "context_len": 0,
+        "query_len": 512
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx1024_n1",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 1024,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx1024_n2",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx1024_n4",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx1024_n8",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx1024_n16",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx1024_n32",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx1024_n64",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx1024_n128",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      },
+      {
+        "context_len": 1024,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx2048_n1",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 2048,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx2048_n2",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx2048_n4",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx2048_n8",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx2048_n16",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx2048_n32",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx2048_n64",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "decode_only_ctx2048_n128",
+    "type": "decode",
+    "requests": [
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      },
+      {
+        "context_len": 2048,
+        "query_len": 1
+      }
+    ]
+  }
+]

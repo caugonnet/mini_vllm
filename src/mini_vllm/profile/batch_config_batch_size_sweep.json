@@ -1,0 +1,122 @@
+[
+  {
+    "name": "batch_size_1",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 1
+      }
+    ]
+  },
+  {
+    "name": "batch_size_2",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 2
+      }
+    ]
+  },
+  {
+    "name": "batch_size_4",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 4
+      }
+    ]
+  },
+  {
+    "name": "batch_size_8",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 8
+      }
+    ]
+  },
+  {
+    "name": "batch_size_16",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 16
+      }
+    ]
+  },
+  {
+    "name": "batch_size_32",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 32
+      }
+    ]
+  },
+  {
+    "name": "batch_size_64",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 64
+      }
+    ]
+  },
+  {
+    "name": "batch_size_128",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 128
+      }
+    ]
+  },
+  {
+    "name": "batch_size_256",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 256
+      }
+    ]
+  },
+  {
+    "name": "batch_size_512",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 512
+      }
+    ]
+  },
+  {
+    "name": "batch_size_1024",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 1024
+      }
+    ]
+  },
+  {
+    "name": "batch_size_2048",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 0,
+        "query_len": 2048
+      }
+    ]
+  }
+]

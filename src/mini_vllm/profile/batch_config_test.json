@@ -1,0 +1,12 @@
+[
+  {
+    "name": "test_001",
+    "type": "prefill",
+    "requests": [
+      {
+        "context_len": 4096,
+        "query_len": 256
+      }
+    ]
+  }
+]

@@ -1,0 +1,245 @@
+[
+  {
+    "name": "prefill_only_q1_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 1
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q2_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 2
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q4_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 4
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q8_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 8
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q16_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 16
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q32_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 32
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q64_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 64
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q128_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 128
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q256_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 256
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q1024_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 1024
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "prefill_only_q2048_n1",
+    "type": "prefill",
+    "request_template": {
+      "context_len": 0,
+      "query_len": 2048
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "decode_only_ctx1024_n1",
+    "type": "decode",
+    "request_template": {
+      "context_len": 1024,
+      "query_len": 1
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "decode_only_ctx1024_n2",
+    "type": "decode",
+    "request_template": {
+      "context_len": 1024,
+      "query_len": 1
+    },
+    "num_reqs": 2
+  },
+  {
+    "name": "decode_only_ctx1024_n4",
+    "type": "decode",
+    "request_template": {
+      "context_len": 1024,
+      "query_len": 1
+    },
+    "num_reqs": 4
+  },
+  {
+    "name": "decode_only_ctx1024_n8",
+    "type": "decode",
+    "request_template": {
+      "context_len": 1024,
+      "query_len": 1
+    },
+    "num_reqs": 8
+  },
+  {
+    "name": "decode_only_ctx1024_n16",
+    "type": "decode",
+    "request_template": {
+      "context_len": 1024,
+      "query_len": 1
+    },
+    "num_reqs": 16
+  },
+  {
+    "name": "decode_only_ctx1024_n32",
+    "type": "decode",
+    "request_template": {
+      "context_len": 1024,
+      "query_len": 1
+    },
+    "num_reqs": 32
+  },
+  {
+    "name": "decode_only_ctx1024_n64",
+    "type": "decode",
+    "request_template": {
+      "context_len": 1024,
+      "query_len": 1
+    },
+    "num_reqs": 64
+  },
+  {
+    "name": "decode_only_ctx1024_n128",
+    "type": "decode",
+    "request_template": {
+      "context_len": 1024,
+      "query_len": 1
+    },
+    "num_reqs": 128
+  },
+  {
+    "name": "decode_only_ctx2048_n1",
+    "type": "decode",
+    "request_template": {
+      "context_len": 2048,
+      "query_len": 1
+    },
+    "num_reqs": 1
+  },
+  {
+    "name": "decode_only_ctx2048_n2",
+    "type": "decode",
+    "request_template": {
+      "context_len": 2048,
+      "query_len": 1
+    },
+    "num_reqs": 2
+  },
+  {
+    "name": "decode_only_ctx2048_n4",
+    "type": "decode",
+    "request_template": {
+      "context_len": 2048,
+      "query_len": 1
+    },
+    "num_reqs": 4
+  },
+  {
+    "name": "decode_only_ctx2048_n8",
+    "type": "decode",
+    "request_template": {
+      "context_len": 2048,
+      "query_len": 1
+    },
+    "num_reqs": 8
+  },
+  {
+    "name": "decode_only_ctx2048_n16",
+    "type": "decode",
+    "request_template": {
+      "context_len": 2048,
+      "query_len": 1
+    },
+    "num_reqs": 16
+  },
+  {
+    "name": "decode_only_ctx2048_n32",
+    "type": "decode",
+    "request_template": {
+      "context_len": 2048,
+      "query_len": 1
+    },
+    "num_reqs": 32
+  },
+  {
+    "name": "decode_only_ctx2048_n64",
+    "type": "decode",
+    "request_template": {
+      "context_len": 2048,
+      "query_len": 1
+    },
+    "num_reqs": 64
+  },
+  {
+    "name": "decode_only_ctx2048_n128",
+    "type": "decode",
+    "request_template": {
+      "context_len": 2048,
+      "query_len": 1
+    },
+    "num_reqs": 128
+  }
+]

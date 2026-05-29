@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini-vllm"
+version = "0.1.0"
+description = "A minimal experimental inference engine built on selected vLLM internals."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+runtime = [
+  "numpy",
+  "torch",
+  "transformers",
+  "vllm",
+]
+server = [
+  "fastapi",
+  "pydantic",
+  "uvicorn",
+]
+profile = [
+  "numpy",
+  "matplotlib",
+]
+test = [
+  "pytest",
+]
+
+[project.scripts]
+mini-vllm-profile = "mini_vllm.profile.cli:main"
+mini-vllm-fit-profile = "mini_vllm.profile.model_fit:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = [
+  "integration: tests that require CUDA, vLLM runtime, or model downloads",
+]

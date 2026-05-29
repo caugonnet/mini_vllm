@@ -1,0 +1,5 @@
+{
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/3rdparty/vllm"
+  ]
+}

@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Local model/profiling outputs.
+*.jsonl
+*.nsys-rep
+*.sqlite
+*.png
+*.wav
+*.mp3
+outputs/
+profile_plots/
+
