@@ -1,0 +1,16 @@
+{
+  "name": "omni_mixed_modalities",
+  "query_type": "use_mixed_modalities",
+  "num_prompts": 2,
+  "question": "What is recited in the audio? What is in this image? Why is this video interesting?",
+  "modalities": ["text", "audio"],
+  "max_tokens": 128,
+  "temperature": 0.0,
+  "num_frames": 16,
+  "sampling_rate": 16000,
+  "media": {
+    "image_path": null,
+    "audio_path": null,
+    "video_path": null
+  }
+}

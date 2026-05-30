@@ -26,6 +26,12 @@ profile = [
   "numpy",
   "matplotlib",
 ]
+omni = [
+  "soundfile",
+  "openpyxl",
+  "imageio[ffmpeg]",
+  "opencv-python",
+]
 test = [
   "pytest",
 ]

@@ -1,0 +1,9 @@
+{
+  "name": "omni_text_to_speech",
+  "query_type": "text",
+  "num_prompts": 4,
+  "question": "Explain how a multi-stage omni inference pipeline overlaps work across stages. Answer in 20 words.",
+  "modalities": ["text", "audio"],
+  "max_tokens": 128,
+  "temperature": 0.0
+}

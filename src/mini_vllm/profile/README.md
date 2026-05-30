@@ -140,3 +140,77 @@ The summary includes eager time, capture time, graphed time, latency gain,
 capture overhead, and sampled GPU metrics for both eager and graphed replay:
 SM active, warp occupancy, DRAM bandwidth, and PCIe bandwidth. Unprefixed
 metric columns use the graphed replay values.
+
+## Omni pipeline experiments (vLLM-Omni)
+
+These experiments target a **multi-stage** `vllm-omni` pipeline (thinker ->
+talker -> code2wav) instead of the single-stream `mini_vllm` runner. Unlike
+`cuda_graph_cli`, omni runs CUDA work in **separate worker processes**, so the
+interesting signal here is genuine cross-stream concurrency, which the single
+dense-LLM `cuda_graph_cli` will never show.
+
+Install `vllm-omni` first (see the top-level README "Optional: vLLM-Omni"
+section) and add the helper deps with `pip install -e ".[omni]"`.
+
+A workload is a small JSON file (see `omni_workload_text.json` and
+`omni_workload_mixed.json`) describing the model query type, output modalities,
+prompt count, and token budget. The model is chosen at run time via `--model`.
+
+### A) Latency + power, and (optionally) torch profiler
+
+```bash
+PYTHONPATH="$PWD/3rdparty/vllm:$PWD/3rdparty/vllm-omni:$PWD/src" \
+python -m mini_vllm.profile.omni_profile_cli \
+  --model Qwen/Qwen2.5-Omni-3B \
+  --workload mini_vllm/profile/omni_workload_text.json \
+  --output omni_profile.jsonl \
+  --torch_profiler_dir omni_traces
+```
+
+`omni_profile.jsonl` contains an `omni_config` row, one `omni_stage_output` row
+per streamed output (with `elapsed_ms` and `output_type`), and an `omni_summary`
+row (wall time, power, energy). Setting `--torch_profiler_dir` exports
+`VLLM_TORCH_PROFILER_DIR` and brackets generation with `start_profile` /
+`stop_profile`, writing per-worker traces under that directory.
+
+### B) Nsight Systems cross-stream concurrency + GPU metrics
+
+```bash
+PYTHONPATH="$PWD/3rdparty/vllm:$PWD/3rdparty/vllm-omni:$PWD/src" \
+python -m mini_vllm.profile.omni_nsys_cli \
+  --model Qwen/Qwen2.5-Omni-3B \
+  --workload mini_vllm/profile/omni_workload_text.json \
+  --cuda_visible_devices 0 \
+  --device_index 0 \
+  --output_prefix omni_metrics
+```
+
+This profiles the whole orchestrator+worker process tree (no
+`--capture-range=cudaProfilerApi`, since that only annotates the orchestrator
+which does no CUDA work), exports SQLite, and writes:
+
+- `omni_metrics.phases.jsonl`: raw per-output timings.
+- `omni_metrics.summary.csv` / `.summary.jsonl`: one row with concurrency
+  metrics (`concurrent_ms`, `concurrency_ratio`, `max_concurrent_kernels`,
+  `num_streams`, `num_pids`) plus sampled GPU metrics (SM active, warp
+  occupancy, DRAM/PCIe bandwidth).
+
+`concurrency_ratio` is the fraction of GPU-busy time during which two or more
+kernels ran simultaneously. A single dense LLM forward stays near 0; a working
+multi-stage omni pipeline should be meaningfully above 0.
+
+### Summarize per-stage torch-profiler ops
+
+```bash
+python -m mini_vllm.profile.omni_torch_trace_summary \
+  --trace_dir omni_traces \
+  --out_jsonl omni_ops_summary.jsonl \
+  --out_csv omni_ops_summary.csv \
+  --top 25
+```
+
+This reduces the per-worker `ops_rank*.xlsx` artifacts into a flat per-stage op
+table (top ops by self CUDA time), keyed by `stage` and `rank`.
+
+Note on VRAM: `Qwen2.5-Omni-7B` keeps all stages resident and will not fit a
+12 GB card; use a smaller `--model` (e.g. `Qwen2.5-Omni-3B`) or quantization.

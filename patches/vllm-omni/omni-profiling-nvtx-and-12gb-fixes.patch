@@ -1,0 +1,147 @@
+diff --git a/vllm_omni/deploy/qwen3_tts.yaml b/vllm_omni/deploy/qwen3_tts.yaml
+index c39ab792..d24a29bb 100644
+--- a/vllm_omni/deploy/qwen3_tts.yaml
++++ b/vllm_omni/deploy/qwen3_tts.yaml
+@@ -37,7 +37,7 @@ connectors:
+ stages:
+   - stage_id: 0
+     max_num_seqs: 10
+-    gpu_memory_utilization: 0.3
++    gpu_memory_utilization: 0.5
+     trust_remote_code: true
+     # Prefix caching on by default. The HS opt-out (talker only consumes the
+     # last token's hidden state) and deferred mm-output writes added in this
+@@ -65,8 +65,8 @@ stages:
+ 
+   - stage_id: 1
+     max_num_seqs: 10
+-    gpu_memory_utilization: 0.3
+-    enforce_eager: false
++    gpu_memory_utilization: 0.35
++    enforce_eager: true
+     trust_remote_code: true
+     enable_prefix_caching: false
+     async_scheduling: true
+diff --git a/vllm_omni/engine/async_omni_engine.py b/vllm_omni/engine/async_omni_engine.py
+index 4986eae6..997c8648 100644
+--- a/vllm_omni/engine/async_omni_engine.py
++++ b/vllm_omni/engine/async_omni_engine.py
+@@ -918,6 +918,7 @@ class AsyncOmniEngine:
+                                         vllm_config=vllm_config,
+                                         executor_class=executor_class,
+                                         log_stats=False,
++                                        omni_stage_id=plan.metadata.stage_id,
+                                     )
+                                 logger.info(
+                                     "[AsyncOmniEngine] Stage %s engine launch started",
+diff --git a/vllm_omni/engine/stage_engine_core_proc.py b/vllm_omni/engine/stage_engine_core_proc.py
+index 0bb70036..9dae3b30 100644
+--- a/vllm_omni/engine/stage_engine_core_proc.py
++++ b/vllm_omni/engine/stage_engine_core_proc.py
+@@ -47,12 +47,55 @@ logger = init_logger(__name__)
+ 
+ _SIGNAL_EXIT_BASE = 128
+ 
++# Opt-in NVTX phase annotation. When set to a truthy value, every engine-core
++# step in this stage worker is wrapped in an NVTX range tagged with the logical
++# omni stage id (e.g. ``omni_stage0.step``). Because each stage runs in its own
++# process and pushes work onto its own CUDA stream, these ranges make it obvious
++# in an Nsight Systems timeline which stage a given burst of kernels belongs to
++# -- i.e. when the talker stage (0) and code2wav stage (1) actually overlap.
++_NVTX_ENV = "VLLM_OMNI_NVTX_STAGES"
++
+ 
+ def _signal_exit_code(signum: int) -> int:
+     """Return the conventional process exit code for signal-driven exits."""
+     return _SIGNAL_EXIT_BASE + signum
+ 
+ 
++def _install_stage_nvtx(engine_core: "StageEngineCoreProc", omni_stage_id: int | None) -> None:
++    """Wrap ``engine_core.step_fn`` so each step emits a stage-tagged NVTX range.
++
++    No-op unless ``VLLM_OMNI_NVTX_STAGES`` is truthy. The busy loop reads
++    ``self.step_fn`` on every iteration, so replacing the attribute here is
++    sufficient and avoids matching the (version-specific) ``step`` signatures.
++    """
++    if os.environ.get(_NVTX_ENV, "").strip().lower() in ("", "0", "false", "no"):
++        return
++    try:
++        import torch
++    except Exception:  # pragma: no cover - torch should always be importable here
++        logger.warning("%s set but torch import failed; skipping NVTX wrap", _NVTX_ENV)
++        return
++
++    original_step_fn = getattr(engine_core, "step_fn", None)
++    if original_step_fn is None:
++        logger.warning("step_fn missing on engine core; skipping NVTX wrap")
++        return
++
++    stage_tag = f"omni_stage{omni_stage_id}" if omni_stage_id is not None else "omni_stage"
++    range_name = f"{stage_tag}.step"
++    nvtx = torch.cuda.nvtx
++
++    def _nvtx_step_fn(*args: Any, **kwargs: Any):
++        nvtx.range_push(range_name)
++        try:
++            return original_step_fn(*args, **kwargs)
++        finally:
++            nvtx.range_pop()
++
++    engine_core.step_fn = _nvtx_step_fn
++    logger.info("NVTX stage annotation enabled: ranges tagged '%s'", range_name)
++
++
+ class StageEngineCoreProc(EngineCoreProc):
+     """Stage-specific engine core process for vLLM-Omni.
+ 
+@@ -157,6 +200,8 @@ class StageEngineCoreProc(EngineCoreProc):
+             signal.signal(signal.SIGTERM, signal_handler)
+             signal.signal(signal.SIGINT, signal_handler)
+ 
++            _install_stage_nvtx(engine_core, omni_stage_id)
++
+             engine_core.run_busy_loop()
+ 
+         except SystemExit:
+@@ -185,21 +230,32 @@ def spawn_stage_core(
+     vllm_config: VllmConfig,
+     executor_class: type[Executor],
+     log_stats: bool = False,
++    omni_stage_id: int | None = None,
+ ) -> tuple[EngineZmqAddresses, BaseProcess, str]:
+     """Spawn a *StageEngineCoreProc* subprocess without performing the handshake.
+ 
+     Must be called while the correct device env vars are set (e.g. under
+     the stage-launch lock).  Call ``complete_stage_handshake`` afterwards.
+ 
++    ``omni_stage_id`` is forwarded to the worker purely so it can label its
++    work (process title + opt-in NVTX stage ranges); the offline path does not
++    wire a coordinator, so it is otherwise unused there.
++
+     Returns ``(addresses, process, handshake_address)``.
+     """
+     addresses = get_engine_zmq_addresses(vllm_config)
+     handshake_address = get_open_zmq_ipc_path()
+ 
++    proc_name = (
++        f"StageEngineCoreProc_stage{omni_stage_id}"
++        if omni_stage_id is not None
++        else "StageEngineCoreProc"
++    )
++
+     ctx = get_mp_context()
+     proc = ctx.Process(
+         target=StageEngineCoreProc.run_stage_core,
+-        name="StageEngineCoreProc",
++        name=proc_name,
+         kwargs={
+             "vllm_config": vllm_config,
+             "local_client": True,
+@@ -208,6 +264,7 @@ def spawn_stage_core(
+             "log_stats": log_stats,
+             "dp_rank": 0,
+             "local_dp_rank": 0,
++            "omni_stage_id": omni_stage_id,
+         },
+     )
+     proc.start()

@@ -49,6 +49,40 @@ pip install -e ".[server,profile,test]"
 Use `.[runtime]` only when you want pip to resolve `torch`, `transformers`, and
 `vllm` from your configured package indexes.
 
+### Optional: vLLM-Omni (multi-stage omni experiments)
+
+`vllm-omni` is a second submodule that reuses the **same** `vllm` you built
+above. The `3rdparty/vllm` and `3rdparty/vllm-omni` submodules both track the
+`v0.21.0` line, and `vllm-omni` neither pins nor pulls `vllm`/`torch` in its
+requirements (it only emits a `RuntimeWarning` on a major/minor mismatch). So
+install it on top of the existing editable vLLM:
+
+```bash
+# Reuse the deliberate vllm/torch build; do NOT let pip re-resolve them.
+python -m pip install -e 3rdparty/vllm-omni --no-deps
+
+# Then add vllm-omni's own deps (audits the hard pins it brings, e.g.
+# diffusers==0.38.0, accelerate==1.12.0, fa3-fwd==0.0.3, onnxruntime).
+python -m pip install -r 3rdparty/vllm-omni/requirements/cuda.txt
+
+# Extra helpers used by the omni profiling experiments.
+pip install -e ".[omni]"
+```
+
+Note: `vllm-omni` monkeypatches a few `vllm` platform modules at import; this is
+expected on the matching `0.21` build.
+
+The omni profiling experiments rely on small local edits to the `vllm-omni`
+submodule (NVTX stage annotations + a single-12GB-GPU Qwen3-TTS config). They are
+kept as a patch because the submodule's `origin` is upstream:
+
+```bash
+# run from the repo root
+git -C 3rdparty/vllm-omni apply ../../patches/vllm-omni/omni-profiling-nvtx-and-12gb-fixes.patch
+```
+
+See `patches/vllm-omni/README.md` for details.
+
 ## Run profiling
 ```bash
 CUDA_VISIBLE_DEVICES=0 \
